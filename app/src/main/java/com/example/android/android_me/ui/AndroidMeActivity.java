@@ -49,7 +49,7 @@ public class AndroidMeActivity extends AppCompatActivity {
                 .commit();
 
         // TODO (5) Create and display the body and leg BodyPartFragments
-        // Create a body BodyPartFragment
+        // Create a body of BodyPartFragment
         BodyPartFragment bodyFragment = new BodyPartFragment();
 
         // Set the list of image id's for the body fragment and set the position to the second image in the list
@@ -59,6 +59,18 @@ public class AndroidMeActivity extends AppCompatActivity {
         //Add the fragment to it's container using a FragmentManager and a Transaction
         fragmentManager.beginTransaction()
                 .add(R.id.body_container, bodyFragment)
+                .commit();
+
+        // Create a leg of BodyPartFragment
+        BodyPartFragment legFragment = new BodyPartFragment();
+
+        // Set the list of image id's for the body fragment and set the position to the second image in the list
+        legFragment.setImageIds(AndroidImageAssets.getLegs());
+        legFragment.setListInedx(1);
+
+        //Add the fragment to it's container using a FragmentManager and a Transaction
+        fragmentManager.beginTransaction()
+                .add(R.id.leg_container, legFragment)
                 .commit();
 
     }
